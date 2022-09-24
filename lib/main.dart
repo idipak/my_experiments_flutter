@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:my_experiments/clock/clock_screen.dart';
+import 'package:my_experiments/custom_paint/coordinates_basics.dart';
 
 void main(){
   runApp(const MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: ClockScreen(),
+      home: CoordinatesBasics(),
     );
   }
 }
