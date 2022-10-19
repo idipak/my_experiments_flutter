@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CoordinatesBasics extends StatelessWidget {
+  static const route = "/coordinates-basics";
   const CoordinatesBasics({Key? key}) : super(key: key);
 
   @override

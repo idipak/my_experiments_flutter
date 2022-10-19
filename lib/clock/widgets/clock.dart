@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class ClockView extends StatefulWidget {
+  static const route = "/route";
   const ClockView({Key? key}) : super(key: key);
 
   @override
@@ -11,11 +12,12 @@ class ClockView extends StatefulWidget {
 }
 
 class _ClockViewState extends State<ClockView> {
+  late Timer _timer;
 
   @override
   void initState() {
     super.initState();
-    Timer.periodic(const Duration(seconds: 1), (timer){
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer){
       setState(() {
 
       });
@@ -24,14 +26,24 @@ class _ClockViewState extends State<ClockView> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    _timer.cancel();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 300,
-      width: 300,
-      child: Transform.rotate(
-        angle: -pi / 2,
-        child: CustomPaint(
-          painter: ClockPaint(),
+    return Scaffold(
+      body: Center(
+        child: SizedBox(
+          height: 300,
+          width: 300,
+          child: Transform.rotate(
+            angle: -pi / 2,
+            child: CustomPaint(
+              painter: ClockPaint(),
+            ),
+          ),
         ),
       ),
     );

@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:my_experiments/custom_paint/coordinates_basics.dart';
+import 'package:my_experiments/menu.dart';
+import 'router.dart';
 
 void main(){
   runApp(const MyApp());
@@ -12,7 +13,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: CoordinatesBasics(),
+      onGenerateRoute: RouteGenerator.generateRoute,
+      initialRoute: Menu.route,
     );
   }
 }
