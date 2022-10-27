@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_experiments/animations/switch_animation.dart';
 import 'package:my_experiments/clock/widgets/clock.dart';
 import 'package:my_experiments/custom_paint/coordinates_basics.dart';
 
@@ -15,7 +16,8 @@ class Menu extends StatelessWidget {
       body: ListView(
         children: const [
           MenuCard(title: "Clock", subTitle: "A designer clock with full customization.", route: ClockView.route,),
-          MenuCard(title: "Coordinates Basics", subTitle: "This is basic examples of shape coordinates drawn with custom paint.", route: CoordinatesBasics.route)
+          MenuCard(title: "Coordinates Basics", subTitle: "This is basic examples of shape coordinates drawn with custom paint.", route: CoordinatesBasics.route),
+          MenuCard(title: "Switch Animation", subTitle: "Switch between widgets with animation.", route: SwitchAnimation.route)
         ],
       ),
     );

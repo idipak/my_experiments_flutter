@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:my_experiments/animations/switch_animation.dart';
 import 'package:my_experiments/clock/widgets/clock.dart';
 import 'package:my_experiments/custom_paint/coordinates_basics.dart';
 import 'package:my_experiments/menu.dart';
@@ -15,6 +16,9 @@ class RouteGenerator{
 
       case ClockView.route:
         return MaterialPageRoute(builder: (_) => const ClockView());
+
+      case SwitchAnimation.route:
+        return MaterialPageRoute(builder: (_) => const SwitchAnimation());
 
         default:
           return MaterialPageRoute(builder: (_) => const Scaffold(body: Center(child: Text("No route found")),));
