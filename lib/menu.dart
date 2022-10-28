@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:my_experiments/animations/switch_animation.dart';
+import 'package:my_experiments/animations/animation_menu.dart';
 import 'package:my_experiments/clock/widgets/clock.dart';
 import 'package:my_experiments/custom_paint/coordinates_basics.dart';
+
+import 'components/menu_card.dart';
 
 class Menu extends StatelessWidget {
   static const route = "/";
@@ -17,34 +19,9 @@ class Menu extends StatelessWidget {
         children: const [
           MenuCard(title: "Clock", subTitle: "A designer clock with full customization.", route: ClockView.route,),
           MenuCard(title: "Coordinates Basics", subTitle: "This is basic examples of shape coordinates drawn with custom paint.", route: CoordinatesBasics.route),
-          MenuCard(title: "Switch Animation", subTitle: "Switch between widgets with animation.", route: SwitchAnimation.route)
+          MenuCard(title: "Animations", subTitle: "Examples of animation in flutter.", route: AnimationMenu.route)
         ],
       ),
-    );
-  }
-}
-
-class MenuCard extends StatelessWidget {
-  final String title;
-  final String subTitle;
-  final String route;
-
-  const MenuCard({
-    Key? key,
-    required this.title,
-    this.subTitle = "This is a example app.",
-    required this.route
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(title),
-      subtitle: Text(subTitle),
-      trailing: const Icon(Icons.chevron_right),
-      onTap: (){
-        Navigator.pushNamed(context, route);
-      },
     );
   }
 }
