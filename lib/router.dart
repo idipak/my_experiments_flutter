@@ -5,6 +5,7 @@ import 'package:my_experiments/animations/switch_animation.dart';
 import 'package:my_experiments/clock/widgets/clock.dart';
 import 'package:my_experiments/custom_paint/coordinates_basics.dart';
 import 'package:my_experiments/menu.dart';
+import 'package:my_experiments/rive/rive_animation.dart';
 
 class RouteGenerator{
   static Route<dynamic> generateRoute(RouteSettings settings){
@@ -23,6 +24,9 @@ class RouteGenerator{
 
       case SwitchAnimation.route:
         return MaterialPageRoute(builder: (_) => const SwitchAnimation());
+
+      case RiveAnim.route:
+        return MaterialPageRoute(builder: (_) => const RiveAnim());
 
         default:
           return MaterialPageRoute(builder: (_) => const Scaffold(body: Center(child: Text("No route found")),));
